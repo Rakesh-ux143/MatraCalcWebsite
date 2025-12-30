@@ -98,18 +98,20 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-<section id="contact" class="contact">
+    <section id="contact" class="contact">
     <div class="container">
         <h2>Contact Me</h2>
-        <form action="https://formspree.io/f/mayvzlkw" method="POST">
+
+        <form name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact">
+
             <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="_replyto" placeholder="Your Email" required>
+            <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
+
             <button type="submit" class="btn">Send Message</button>
         </form>
 
-        <!-- Contact Details -->
         <div class="contact-details">
             <p>📧 Email: <a href="mailto:hellohumancalci@gmail.com">hellohumancalci@gmail.com</a></p>
             <p>📞 Phone: <a href="tel:+916366908488">+91 6366908488</a></p>
@@ -117,12 +119,13 @@
             <p>📍 Location: India</p>
             <p>🔗 Social: 
                 <a href="https://www.youtube.com/channel/UCLzV2ZIBXzRueRFV0-RrxgQ" target="_blank">YouTube</a> | 
-                <a href="https://www.instagram.com/_rockyyadav45?igsh=Z255NHRveXJsdGpm" target="_blank">Instagram</a> | 
+                <a href="https://www.instagram.com/_rockyyadav45" target="_blank">Instagram</a> | 
                 <a href="https://www.linkedin.com/in/rakesh-yadav-r-l-human-calculator-178512259" target="_blank">LinkedIn</a>
             </p>
         </div>
     </div>
 </section>
+
 
 <!-- Footer -->
 <footer>
@@ -135,4 +138,5 @@
         </div>
     </div>
 </footer>
+
 
