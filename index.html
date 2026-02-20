@@ -122,7 +122,39 @@
         </p>
     </div>
 </section>
+    <!-- ChotuCalc Interactive Section -->
+<section id="interactive" class="interactive">
+    <div class="container">
+        <h2>ChotuCalc & CalcStorm Zone</h2>
 
+        <div class="mode-buttons">
+            <button onclick="showDoubtMode()" class="btn">Ask ChotuCalc</button>
+            <button onclick="showChallengeMode()" class="btn">CalcStorm Challenge</button>
+        </div>
+
+        <!-- Doubt Mode -->
+        <div id="doubtMode" class="mode-box">
+            <img src="https://raw.githubusercontent.com/Rakesh-ux143/MatraCalcWebsite/main/MatraCalc.png" alt="ChotuCalc" class="character">
+            
+            <input type="text" id="userInput" placeholder="Type your math doubt here...">
+            <button onclick="solveDoubt()" class="btn">Ask</button>
+
+            <div id="response" class="speech-box"></div>
+        </div>
+
+        <!-- Challenge Mode -->
+        <div id="challengeMode" class="mode-box" style="display:none;">
+            <img src="https://raw.githubusercontent.com/Rakesh-ux143/MatraCalcWebsite/main/CalcBrain.png" alt="CalcStorm" class="character">
+
+            <h3 id="question"></h3>
+            <input type="number" id="answer" placeholder="Enter your answer">
+            <button onclick="checkAnswer()" class="btn">Submit</button>
+
+            <div id="result" class="speech-box"></div>
+        </div>
+
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -167,39 +199,7 @@
 </body>
 </html>
 
-<!-- ChotuCalc Interactive Section -->
-<section id="interactive" class="interactive">
-    <div class="container">
-        <h2>ChotuCalc & CalcStorm Zone</h2>
 
-        <div class="mode-buttons">
-            <button onclick="showDoubtMode()" class="btn">Ask ChotuCalc</button>
-            <button onclick="showChallengeMode()" class="btn">CalcStorm Challenge</button>
-        </div>
-
-        <!-- Doubt Mode -->
-        <div id="doubtMode" class="mode-box">
-            <img src="https://raw.githubusercontent.com/Rakesh-ux143/MatraCalcWebsite/main/MatraCalc.png" alt="ChotuCalc" class="character">
-            
-            <input type="text" id="userInput" placeholder="Type your math doubt here...">
-            <button onclick="solveDoubt()" class="btn">Ask</button>
-
-            <div id="response" class="speech-box"></div>
-        </div>
-
-        <!-- Challenge Mode -->
-        <div id="challengeMode" class="mode-box" style="display:none;">
-            <img src="https://raw.githubusercontent.com/Rakesh-ux143/MatraCalcWebsite/main/CalcBrain.png" alt="CalcStorm" class="character">
-
-            <h3 id="question"></h3>
-            <input type="number" id="answer" placeholder="Enter your answer">
-            <button onclick="checkAnswer()" class="btn">Submit</button>
-
-            <div id="result" class="speech-box"></div>
-        </div>
-
-    </div>
-</section>
 
 
 
