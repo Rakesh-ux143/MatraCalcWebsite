@@ -157,3 +157,39 @@ footer .social a {
     text-decoration: none;
     margin: 0 10px;
 }
+.interactive {
+    padding: 80px 0;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.mode-buttons {
+    margin-bottom: 30px;
+}
+
+.mode-box {
+    margin-top: 20px;
+}
+
+.character {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.speech-box {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    width: 300px;
+    margin: 15px auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.interactive input {
+    padding: 10px;
+    width: 250px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
