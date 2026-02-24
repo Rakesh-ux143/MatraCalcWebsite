@@ -144,17 +144,36 @@
 
         <!-- Challenge Mode -->
         <div id="challengeMode" class="mode-box" style="display:none;">
-            <img src="https://raw.githubusercontent.com/Rakesh-ux143/MatraCalcWebsite/main/CalcBrain.png" alt="CalcStorm" class="character">
+    <img src="https://raw.githubusercontent.com/Rakesh-ux143/MatraCalcWebsite/main/CalcBrain.png" 
+         alt="CalcStorm" class="character">
 
-            <h3 id="question"></h3>
-            <input type="number" id="answer" placeholder="Enter your answer">
-            <button onclick="checkAnswer()" class="btn">Submit</button>
+    <div id="setupSection">
+        <h3>Select Operation</h3>
 
-            <div id="result" class="speech-box"></div>
-        </div>
+        <select id="operation">
+            <option value="add">Addition</option>
+            <option value="sub">Subtraction</option>
+            <option value="mul">Multiplication</option>
+            <option value="div">Division</option>
+            <option value="square">Square</option>
+            <option value="cube">Cube</option>
+        </select>
 
+        <input type="number" id="count" placeholder="How many numbers?" min="1">
+
+        <button onclick="generateQuestion()" class="btn">Start Challenge</button>
     </div>
-</section>
+
+    <div id="questionSection" style="display:none;">
+        <h3 id="question"></h3>
+
+        <input type="number" id="answer" placeholder="Enter your answer">
+
+        <button onclick="checkAnswer()" class="btn">Submit</button>
+
+        <div id="result" class="speech-box"></div>
+    </div>
+</div>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -199,6 +218,7 @@
        <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
