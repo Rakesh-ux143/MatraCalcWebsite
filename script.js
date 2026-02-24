@@ -1,43 +1,37 @@
-function solveDoubt(){
-    let input = document.getElementById("userInput").value.trim();
+function solveDoubt() {
+    let input = document.getElementById("userInput").value;
     let response = document.getElementById("response");
 
     // Remove spaces
     input = input.replace(/\s+/g, '');
 
-    // Validate input
-    if(!/^[0-9+\-*/.]+$/.test(input)){
-        response.innerHTML = "Please enter valid numbers with + - * / only 😊";
+    // Check valid characters
+    if (!/^[0-9+\-*/.]+$/.test(input)) {
+        response.innerHTML = "Enter valid numbers with + - * /";
         return;
     }
 
-    // Split numbers and operators
     let numbers = input.split(/[\+\-\*\/]/).map(Number);
-    let operators = input.match(/[\+\-\*\/]/g);
-
-    if(!operators){
-        response.innerHTML = "Enter an expression like 10+20-5";
-        return;
-    }
+    let operators = input.match(/[\+\-\*\/]/g) || [];
 
     let result = numbers[0];
 
-    for(let i = 0; i < operators.length; i++){
-        if(operators[i] === '+'){
-            result = result + numbers[i+1];
+    for (let i = 0; i < operators.length; i++) {
+        let nextNumber = numbers[i + 1];
+
+        if (operators[i] === '+') {
+            result += nextNumber;
         }
-        else if(operators[i] === '-'){
-            result = result - numbers[i+1];
+        else if (operators[i] === '-') {
+            result -= nextNumber;
         }
-        else if(operators[i] === '*'){
-            result = result * numbers[i+1];
+        else if (operators[i] === '*') {
+            result *= nextNumber;
         }
-        else if(operators[i] === '/'){
-            result = result / numbers[i+1];
+        else if (operators[i] === '/') {
+            result /= nextNumber;
         }
     }
 
-    response.innerHTML =
-    "Hi Champ 😊<br>" +
-    input + " = <strong>" + result + "</strong>";
+    response.innerHTML = input + " = <strong>" + result + "</strong>";
 }
