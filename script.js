@@ -116,3 +116,42 @@ function checkAnswer(){
             "❌ Wrong! Correct answer is <strong>" + correctAnswer + "</strong>";
     }
 }
+function sendMessage() {
+    const input = document.getElementById("chatInput");
+    const chatBox = document.getElementById("chatBox");
+
+    let message = input.value.trim();
+    if (message === "") return;
+
+    // Create user message
+    let userMsg = document.createElement("div");
+    userMsg.classList.add("message", "user");
+    userMsg.innerText = message;
+    chatBox.appendChild(userMsg);
+
+    // Simple bot reply logic (temporary)
+    let botReply = getBotResponse(message);
+
+    let botMsg = document.createElement("div");
+    botMsg.classList.add("message", "bot");
+    botMsg.innerText = botReply;
+    chatBox.appendChild(botMsg);
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+    input.value = "";
+}
+
+function getBotResponse(message) {
+    message = message.toLowerCase();
+
+    if (message.includes("hello"))
+        return "Hello 👋 I am MatraAI!";
+    
+    if (message.includes("who are you"))
+        return "I am MatraAI, your Human Calculator Assistant 🤖";
+    
+    if (message.includes("math"))
+        return "I love math! Ask me any calculation.";
+    
+    return "Interesting question! Soon I will be powered by real AI 🚀";
+}
