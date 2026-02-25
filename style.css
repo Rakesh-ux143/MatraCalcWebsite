@@ -192,4 +192,56 @@ footer .social a {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
+.chat-section {
+    padding: 50px 0;
+    background: #f4f6ff;
+}
+
+.chat-container {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.chat-box {
+    height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 70%;
+}
+
+.user {
+    align-self: flex-end;
+    background: #4a6cf7;
+    color: white;
+}
+
+.bot {
+    align-self: flex-start;
+    background: #e4e6ff;
+    color: black;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
 
