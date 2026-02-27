@@ -43,6 +43,7 @@ function solveDoubt() {
 // =============================
 
 let correctAnswer;
+let currentDigit;
 
 function showChallengeMode(){
     document.getElementById("doubtMode").style.display = "none";
@@ -50,17 +51,29 @@ function showChallengeMode(){
 }
 
 function generateQuestion(){
+
     let operation = document.getElementById("operation").value;
     let count = parseInt(document.getElementById("count").value);
+    currentDigit = parseInt(document.getElementById("digit").value);
 
     if(!count || count < 1){
         alert("Enter valid number count");
         return;
     }
 
+    if(!currentDigit || currentDigit < 1 || currentDigit > 10){
+        alert("Digit must be between 1 and 10");
+        return;
+    }
+
     let numbers = [];
+
+    let min = Math.pow(10, currentDigit - 1);
+    let max = Math.pow(10, currentDigit) - 1;
+
     for(let i = 0; i < count; i++){
-        numbers.push(Math.floor(Math.random() * 20) + 1);
+        let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+        numbers.push(randomNum);
     }
 
     let questionText = "";
