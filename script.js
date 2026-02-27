@@ -111,6 +111,16 @@ function checkAnswer(){
 
     if(userAnswer === correctAnswer){
         document.getElementById("result").innerHTML = "🔥 Correct! You are CalcStorm!";
+        
+        // Automatically generate a new question after 2 seconds
+        setTimeout(() => {
+            // Clear previous input and result
+            document.getElementById("answer").value = "";
+            document.getElementById("result").innerHTML = "";
+
+            // Generate a new question using the previously selected operation and count
+            generateQuestion();
+        }, 2000); // 2 seconds delay
     } else {
         document.getElementById("result").innerHTML = 
             "❌ Wrong! Correct answer is <strong>" + correctAnswer + "</strong>";
