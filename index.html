@@ -164,13 +164,17 @@
 
         <button onclick="generateQuestion()" class="btn">Start Challenge</button>
     </div>
-
-    <div id="questionSection" style="display:none;">
+ <!-- Question Section -->
+   <div id="questionSection" style="display:none;">
         <h3 id="question"></h3>
 
         <input type="number" id="answer" placeholder="Enter your answer">
 
-        <button onclick="checkAnswer()" class="btn">Submit</button>
+        <div class="button-group">
+            <button onclick="checkAnswer()" class="btn">Submit</button>
+            <!-- ✅ Back button -->
+            <button onclick="goBack()" class="btn">⬅ Back</button>
+        </div>
 
         <div id="result" class="speech-box"></div>
     </div>
@@ -233,6 +237,7 @@
        <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
