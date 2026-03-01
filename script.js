@@ -50,8 +50,18 @@ function showChallengeMode(){
     document.getElementById("challengeMode").style.display = "block";
 }
 
-function generateQuestion(){
+// Back button functionality
+function goBack() {
+    document.getElementById("questionSection").style.display = "none";
+    document.getElementById("setupSection").style.display = "block";
 
+    // Clear previous question and input
+    document.getElementById("question").innerText = "";
+    document.getElementById("result").innerText = "";
+    document.getElementById("answer").value = "";
+}
+
+function generateQuestion(){
     let operation = document.getElementById("operation").value;
     let count = parseInt(document.getElementById("count").value);
     currentDigit = parseInt(document.getElementById("digit").value);
@@ -67,7 +77,6 @@ function generateQuestion(){
     }
 
     let numbers = [];
-
     let min = Math.pow(10, currentDigit - 1);
     let max = Math.pow(10, currentDigit) - 1;
 
@@ -82,29 +91,24 @@ function generateQuestion(){
         correctAnswer = numbers.reduce((a,b)=>a+b);
         questionText = numbers.join(" + ");
     }
-
     else if(operation === "sub"){
         correctAnswer = numbers.reduce((a,b)=>a-b);
         questionText = numbers.join(" - ");
     }
-
     else if(operation === "mul"){
         correctAnswer = numbers.reduce((a,b)=>a*b);
         questionText = numbers.join(" × ");
     }
-
     else if(operation === "div"){
         correctAnswer = numbers.reduce((a,b)=>a/b);
         questionText = numbers.join(" ÷ ");
         correctAnswer = parseFloat(correctAnswer.toFixed(2));
     }
-
     else if(operation === "square"){
         let n = numbers[0];
         correctAnswer = n * n;
         questionText = n + "²";
     }
-
     else if(operation === "cube"){
         let n = numbers[0];
         correctAnswer = n * n * n;
@@ -117,6 +121,15 @@ function generateQuestion(){
 
     document.getElementById("setupSection").style.display = "none";
     document.getElementById("questionSection").style.display = "block";
+
+    // ✅ Add Enter key listener for auto-submit
+    const answerInput = document.getElementById("answer");
+    answerInput.focus(); // optional: focus the input automatically
+    answerInput.addEventListener("keydown", function(event) {
+        if(event.key === "Enter"){
+            checkAnswer();
+        }
+    }, { once: true }); // run once per question
 }
 
 function checkAnswer(){
@@ -127,18 +140,16 @@ function checkAnswer(){
         
         // Automatically generate a new question after 2 seconds
         setTimeout(() => {
-            // Clear previous input and result
             document.getElementById("answer").value = "";
             document.getElementById("result").innerHTML = "";
-
-            // Generate a new question using the previously selected operation and count
             generateQuestion();
-        }, 2000); // 2 seconds delay
+        }, 2000);
     } else {
         document.getElementById("result").innerHTML = 
             "❌ Wrong! Correct answer is <strong>" + correctAnswer + "</strong>";
     }
 }
+
 function sendMessage() {
     const input = document.getElementById("chatInput");
     const chatBox = document.getElementById("chatBox");
