@@ -16,6 +16,7 @@ body {
     margin: auto;
 }
 
+/* HEADER */
 header {
     background: #00BFA6;
     color: #fff;
@@ -47,11 +48,13 @@ header nav ul li a {
     font-weight: 500;
 }
 
+/* HERO */
 .hero {
     background: #FF6F00;
     color: #fff;
     padding: 100px 0;
     text-align: center;
+    margin-bottom: 80px; /* 🔥 GAP FIX */
 }
 
 .hero-logo {
@@ -66,14 +69,7 @@ header nav ul li a {
 
 .hero p {
     font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-/* ✅ Added small hero enhancement */
-.hero-tagline {
-    margin-top: 10px;
-    font-size: 1rem;
-    opacity: 0.9;
+    margin-bottom: 15px;
 }
 
 .btn {
@@ -86,6 +82,7 @@ header nav ul li a {
     font-weight: bold;
 }
 
+/* SECTIONS */
 .about, .videos, .courses, .contact {
     padding: 80px 0;
 }
@@ -111,6 +108,7 @@ header nav ul li a {
     margin: 10px 0;
 }
 
+/* VIDEO */
 .video-grid {
     display: flex;
     flex-wrap: wrap;
@@ -123,6 +121,7 @@ header nav ul li a {
     text-align: center;
 }
 
+/* COURSES */
 .course-grid {
     display: flex;
     flex-wrap: wrap;
@@ -138,6 +137,7 @@ header nav ul li a {
     text-align: center;
 }
 
+/* CONTACT */
 .contact form {
     max-width: 500px;
     margin: auto;
@@ -152,6 +152,7 @@ header nav ul li a {
     border-radius: 5px;
 }
 
+/* FOOTER */
 footer {
     background: #333;
     color: #fff;
@@ -165,6 +166,7 @@ footer .social a {
     margin: 0 10px;
 }
 
+/* INTERACTIVE */
 .interactive {
     padding: 80px 0;
     background: #f9f9f9;
@@ -201,6 +203,7 @@ footer .social a {
     border: 1px solid #ccc;
 }
 
+/* CHAT */
 .chat-section {
     padding: 50px 0;
     background: #f4f6ff;
@@ -254,41 +257,30 @@ footer .social a {
     border: 1px solid #ccc;
 }
 
-/* ================= CEO SECTION (ADDED ONLY) ================= */
-
+/* 🔥 CEO SECTION (MATCHES HERO STYLE) */
 .ceo {
-    padding: 80px 0;
-    background: #f5f5f5;
+    padding: 100px 0;
+    background: #f9f9f9;
+    text-align: center;
 }
 
-.ceo-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    flex-wrap: wrap;
-}
-
-/* 🔥 Circular Image */
 .ceo-img {
-    width: 230px;
-    height: 230px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid #00BFA6;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    transition: transform 0.3s ease;
-}
-
-.ceo-img:hover {
-    transform: scale(1.08);
+    border: 6px solid #00BFA6;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-bottom: 25px;
 }
 
 .ceo-text {
-    max-width: 500px;
+    max-width: 700px;
+    margin: auto;
 }
 
 .ceo-text h2 {
+    font-size: 2rem;
     color: #00BFA6;
     margin-bottom: 10px;
 }
@@ -298,14 +290,7 @@ footer .social a {
 }
 
 .ceo-text p {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .ceo-box {
-        flex-direction: column;
-        text-align: center;
-    }
+    margin-bottom: 12px;
+    line-height: 1.7;
+    color: #555;
 }
