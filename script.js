@@ -45,9 +45,9 @@ function solveDoubt() {
 let correctAnswer;
 let currentDigit;
 
-function showChallengeMode(){
-    document.getElementById("doubtMode").style.display = "none";
-    document.getElementById("challengeMode").style.display = "block";
+function showDoubtMode(){
+    document.getElementById("challengeMode").style.display = "none";
+    document.getElementById("doubtMode").style.display = "block";
 }
 
 // Back button functionality
