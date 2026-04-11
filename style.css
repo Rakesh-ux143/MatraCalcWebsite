@@ -324,3 +324,22 @@ section {
     border-bottom: 1px solid #eee;
     margin-bottom: 10px;
 }
+.tricks {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.tricks-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.tricks-frame iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 10px;
+    border: none;
+}
