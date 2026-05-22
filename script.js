@@ -154,42 +154,72 @@ function checkAnswer(){
     }
 }
 
-function sendMessage() {
+async function sendMessage() {
+
     const input = document.getElementById("chatInput");
     const chatBox = document.getElementById("chatBox");
 
     let message = input.value.trim();
+
     if (message === "") return;
 
-    // Create user message
+    // User message
     let userMsg = document.createElement("div");
+
     userMsg.classList.add("message", "user");
+
     userMsg.innerText = message;
+
     chatBox.appendChild(userMsg);
 
-    // Simple bot reply logic (temporary)
-    let botReply = getBotResponse(message);
+    input.value = "";
 
+    // Bot loading
     let botMsg = document.createElement("div");
+
     botMsg.classList.add("message", "bot");
-    botMsg.innerText = botReply;
+
+    botMsg.innerText = "Thinking...";
+
     chatBox.appendChild(botMsg);
 
     chatBox.scrollTop = chatBox.scrollHeight;
-    input.value = "";
-}
 
-function getBotResponse(message) {
-    message = message.toLowerCase();
+    try {
 
-    if (message.includes("hello"))
-        return "Hello 👋 I am MatraAI!";
-    
-    if (message.includes("who are you"))
-        return "I am MatraAI, your Human Calculator Assistant 🤖";
-    
-    if (message.includes("math"))
-        return "I love math! Ask me any calculation.";
-    
-    return "Interesting question! Soon I will be powered by real AI 🚀";
+        const response = await fetch("http://127.0.0.1:5000/chat", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                message: message
+            })
+
+        });
+
+        const data = await response.json();
+
+        botMsg.innerText = data.reply;
+
+    } catch (error) {
+
+        botMsg.innerText = "Error connecting to MatraAI.";
+
+        console.error(error);
+
+    }
+
+    chatBox.scrollTop = chatBox.scrollHeight;
 }
+document.getElementById("chatInput")
+.addEventListener("keypress", function(event) {
+
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+
+});
